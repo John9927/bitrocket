@@ -5,9 +5,9 @@
 
 .header {
   display: flex;
-  width: 90%;
+  width: 93%;
   margin: 30px auto;
-  height: 80px;
+  height: 70px;
   border: 1px solid white;
   align-items: center;
   padding: 15px;
@@ -19,6 +19,13 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+
+.container__hamburger {
+  display: none;
+  width: 100%;
+  justify-content: flex-end;
+  margin: auto 10px;
 }
 
 .button__container {
@@ -50,10 +57,41 @@
 .label {
   font-size: 36px;
   font-weight: bold;
-  // Questo serve per poter colorare il testo gradient. Infatti si utilizza un background-clip e un text-fill-color per poter mostrare il colore gradiente non in background
-  // ma al posto del testo. E' come se si facesse "color: red" peró non si puó fare con un gradient
   background: -webkit-linear-gradient(124deg, rgba(58,134,255,1) 0%, rgba(255,0,110,1) 93%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+@media screen and (max-width: 620px) {
+  .container__hamburger {
+    display: flex;
+  }
+
+  .header {
+    padding: 0px 10px;
+  }
+
+  .button__container {
+    display: none !important;
+  }
+
+  .button {
+    display: none !important;
+  }
+
+  .labeltext {
+    font-size: 25px;
+  }
+
+  .label {
+    height: 47px;
+  }
+
+  .logo {
+    zoom: 70%;
+  }
+
+  .fa-bars {
+
+  }
+}
