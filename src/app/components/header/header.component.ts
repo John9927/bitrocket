@@ -7,18 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  showHamburger: Boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onClickButton() {
-    console.log("ciao")
+
   }
 
   onClickButton2() {
-    console.log("ciao2")
 
+  }
+
+  onClickHamburger() {
+    this.showHamburger = !this.showHamburger
   }
 
 }

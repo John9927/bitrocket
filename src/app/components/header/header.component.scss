@@ -68,15 +68,15 @@
   }
 
   .header {
-    padding: 0px 10px;
+    padding: 0px 0px;
   }
 
   .button__container {
-    display: none !important;
+    display: none;
   }
 
   .button {
-    display: none !important;
+    display: none;
   }
 
   .labeltext {
@@ -91,7 +91,9 @@
     zoom: 70%;
   }
 
-  .fa-bars {
-
+  .fa-bars,
+  .fa-times {
+    width: 20px;
+    height: 20px;
   }
 }

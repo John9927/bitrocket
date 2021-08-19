@@ -19,7 +19,12 @@
     </div>
     <div class="container__button">
       <div class="container__hamburger">
-        <i class="fas fa-bars"></i>
+        <div *ngIf="showHamburger" (click)="onClickHamburger()">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div *ngIf="!showHamburger" (click)="onClickHamburger()">
+          <i class="fas fa-times"></i>
+        </div>
       </div>
       <div class="button__container">
         <div class="button" (click)="onClickButton()">
