@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bitrocket-ca7be": {
+      "hosting": {
+        "bitrocket": [
+          "bitrocket-ca7be"
+        ]
+      }
+    }
+  }
+}
