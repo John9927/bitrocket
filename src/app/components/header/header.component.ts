@@ -14,15 +14,15 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickButton() {
-
+    this.showHamburger = !this.showHamburger;
   }
 
   onClickButton2() {
-
+    this.showHamburger = !this.showHamburger;
   }
 
   onClickHamburger() {
-    this.showHamburger = !this.showHamburger
+    this.showHamburger = !this.showHamburger;
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="container__header">
   <div class="header">
+    <!-- Logo -->
     <div class="logo">
-      <!-- Logo -->
       <svg width="83" height="79" viewBox="0 0 83 79" fill="none" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="83" height="79" rx="15" fill="url(#pattern0)" />
@@ -19,7 +19,7 @@
     </div>
     <div class="container__button">
       <div class="container__hamburger">
-        <div *ngIf="showHamburger" (click)="onClickHamburger()">
+        <div *ngIf="showHamburger" style="cursor: pointer;" (click)="onClickHamburger()">
           <i class="fas fa-bars"></i>
         </div>
         <div *ngIf="!showHamburger" (click)="onClickHamburger()">
@@ -27,18 +27,32 @@
         </div>
       </div>
       <div class="button__container">
-        <div class="button" (click)="onClickButton()">
-          <span class="item">
+        <div class="button">
+          <span class="item" (click)="onClickButton()">
             Receive item faster
           </span>
         </div>
 
-        <div class="button" (click)="onClickButton2()">
-          <span class="item">
+        <div class="button">
+          <span class="item" (click)="onClickButton2()">
             Shopping Cart
           </span>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<div class="container__items" *ngIf="!showHamburger">
+  <div class="items">
+    <span class="item__menu" (click)="onClickButton()">
+      Receive item faster
+    </span>
+  </div>
+  <div class="items">
+    <span class="item__menu" (click)="onClickButton2()">
+      Shopping Cart
+    </span>
   </div>
 </div>
