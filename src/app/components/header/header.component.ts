@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   showHamburger: Boolean = true;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +22,17 @@ export class HeaderComponent implements OnInit {
     this.showHamburger = !this.showHamburger;
   }
 
+  onClickButton3() {
+    this.showHamburger = !this.showHamburger;
+    this.router.navigateByUrl('login');
+  }
+
   onClickHamburger() {
     this.showHamburger = !this.showHamburger;
+  }
+
+  onClickLogin() {
+    this.router.navigateByUrl('login');
   }
 
 }

@@ -1,0 +1,8 @@
+<div class="container">
+  <form [formGroup]="profileForm" class="box">
+    <h1>Login</h1>
+    <input type="email" name="" formControlName="email" placeholder="Email">
+    <input type="password" name="" formControlName="password" placeholder="Password">
+    <button (click)="onSignIn(profileForm.controls.email.value, profileForm.controls.password.value)">Login</button>
+  </form>
+</div>
