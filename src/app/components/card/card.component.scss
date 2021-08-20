@@ -1,6 +1,7 @@
 .container__card {
   display: grid;
   width: 100%;
+  height: 100vh;
 }
 
 .card {
@@ -18,14 +19,24 @@
 .card__container__items {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
-.container__items {
+.container__items__left {
   margin: 25px auto;
-  width: 93%;
+  width: 64%;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px auto;
-  gap: 30px;
+  height: 200px;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+
+.container__items__rigth {
+  margin: 25px auto;
+  width: 32%;
+  display: grid;
+  grid-template-columns: auto;
+  margin-right: 15px;
 }
 
 .card__items {
@@ -39,25 +50,33 @@
 }
 
 
-
 @media screen and (max-width: 1300px) {
-  .container__items {
+  .container__items__left {
     grid-template-columns: auto auto auto;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .container__items {
+  .container__items__left {
     grid-template-columns: auto auto;
   }
+  .container__items__rigth {
+    display: none;
+  }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .card {
     width: 93%;
     margin: 0 auto;
   }
-  .container__items {
+  .container__items__left {
     grid-template-columns: auto;
     width: 93%;
+  }
+  .container__card {
+    position: relative;
+  }
+  .card__items__mobile {
+    display: flex;
   }
 }
