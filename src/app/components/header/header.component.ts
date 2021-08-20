@@ -22,17 +22,8 @@ export class HeaderComponent implements OnInit {
     this.showHamburger = !this.showHamburger;
   }
 
-  onClickButton3() {
-    this.showHamburger = !this.showHamburger;
-    this.router.navigateByUrl('login');
-  }
-
   onClickHamburger() {
     this.showHamburger = !this.showHamburger;
-  }
-
-  onClickLogin() {
-    this.router.navigateByUrl('login');
   }
 
 }

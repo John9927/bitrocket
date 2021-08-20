@@ -31,7 +31,7 @@
 .button__container {
   justify-content: space-between;
   display: flex;
-  width: 318px;
+  width: 250px;
 }
 
 .button {
@@ -92,6 +92,25 @@
   cursor: pointer;
 }
 
+.pallina {
+  position: absolute;
+  display: none;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #8338ec;
+  opacity: 0.3;
+  box-shadow: inset -50px 50px 86px rgb(255 254 254 / 58%);
+  top: 4%;
+  left: 86%;
+}
+
+@media screen and (min-width: 1024px){
+  .pallina {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .container__hamburger {
     display: flex;
@@ -126,5 +145,9 @@
   .fa-times {
     width: 20px;
     height: 20px;
+  }
+
+  .pallina {
+    display: none;
   }
 }
