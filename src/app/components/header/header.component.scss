@@ -112,6 +112,7 @@
 @media screen and (max-width: 620px) {
   .container__hamburger {
     display: flex;
+    z-index: 2;
   }
 
   .header {
@@ -132,11 +133,17 @@
   }
 
   .label {
-    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 94%;
+    z-index: 1;
   }
 
   .logo {
-    zoom: 70%;
+    zoom: 82%;
+    margin-top: 9px;
   }
 
   .fa-bars,

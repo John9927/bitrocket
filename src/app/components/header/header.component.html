@@ -19,7 +19,7 @@
     </div>
     <div class="container__button">
       <div class="container__hamburger">
-        <div *ngIf="showHamburger" style="cursor: pointer;" (click)="onClickHamburger()">
+        <div *ngIf="showHamburger" style="cursor: pointer; z-index: 2;" (click)="onClickHamburger()">
           <i class="fas fa-bars"></i>
         </div>
         <div *ngIf="!showHamburger" (click)="onClickHamburger()">
