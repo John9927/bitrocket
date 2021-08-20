@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  showModalSuccess: Boolean = false;
+
   constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -21,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   async onSignIn(email: string, password: string) {
     await this.authService.signin(email, password)
-    // if(this.authService.isLoggedIn) {
-    // }
+    if (this.authService.isLoggedIn) {
+      this.showModalSuccess = true;
+    }
   }
 }

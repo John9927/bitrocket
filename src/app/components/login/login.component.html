@@ -6,3 +6,12 @@
     <button (click)="onSignIn(profileForm.controls.email.value, profileForm.controls.password.value)">Login</button>
   </form>
 </div>
+
+
+<div class="container__modal__success" *ngIf="showModalSuccess">
+  <div class="modal__success">
+    <span class="label">
+      Autenticazione Riuscita
+    </span>
+  </div>
+</div>

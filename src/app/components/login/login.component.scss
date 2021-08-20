@@ -83,6 +83,33 @@
 }
 
 
+// Modal success
+.container__modal__success {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.modal__success {
+  display: flex;
+  width: 90%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background: #ffffff54;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: 24px;
+  color: rgba(114, 113, 113, 0.829);
+}
+
+
 @media only screen and (max-width: 415px) {
   .container {
     width: 70%;
