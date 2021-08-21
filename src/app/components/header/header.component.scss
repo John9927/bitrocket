@@ -1,6 +1,7 @@
 .container__header {
   display: flex;
   width: 100%;
+  position: relative;
 }
 
 .logo {
@@ -163,6 +164,47 @@
   color: #ffffff;
 }
 
+// Modal Success
+.container__modal__success {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 3;
+  margin-top: -19px;
+  margin-left: 21px;
+}
+
+.modal__success {
+  display: flex;
+  border-radius: 15px;
+  background: white;
+  border: 2px solid #6a00ff;
+  width: 394px;
+  height: 98px;
+  top: -60px;
+  animation: ehila ease 0.5s;
+}
+
+.container__check {
+  display: flex;
+  height: 98px;
+  align-items: center;
+  margin: 0 25px;
+}
+
+.container__label {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #8338ec;
+}
+
 @media screen and (min-width: 1024px) {
 }
 
@@ -207,5 +249,15 @@
 
   .pallina {
     display: none;
+  }
+}
+
+@keyframes ehila {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 394px;
   }
 }

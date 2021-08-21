@@ -48,13 +48,15 @@ export class CardComponent implements OnInit {
 
 
   onClickBuy(id: any, euro: number, amount: number) {
-    // console.log("Id: ", id);
-    // console.log("Euro:", euro);
-    // console.log("Crediti: ", amount);
     this.authService.allData.push({"Id": id, "euro": euro, "crediti": amount });
     console.log(this.authService.allData);
     this.authService.indexBouncer++;
     this.authService.showBouncer = true;
+    this.authService.showAddedCart = true;
+
+    setTimeout(() => {
+      this.authService.showAddedCart = false;
+    }, 1000)
   }
 
 }
