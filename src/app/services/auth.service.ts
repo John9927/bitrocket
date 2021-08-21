@@ -10,6 +10,8 @@ import { reduce } from 'rxjs/operators';
 export class AuthService {
   isLoggedIn: Boolean = false;
   totaleCrediti: any;
+  allData: any = [];
+
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In
