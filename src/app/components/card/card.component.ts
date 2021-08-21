@@ -52,7 +52,9 @@ export class CardComponent implements OnInit {
     // console.log("Euro:", euro);
     // console.log("Crediti: ", amount);
     this.authService.allData.push({"Id": id, "euro": euro, "crediti": amount });
-    console.log(this.authService.allData)
+    console.log(this.authService.allData);
+    this.authService.indexBouncer++;
+    this.authService.showBouncer = true;
   }
 
 }

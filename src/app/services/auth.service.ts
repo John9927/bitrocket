@@ -11,6 +11,8 @@ export class AuthService {
   isLoggedIn: Boolean = false;
   totaleCrediti: any;
   allData: any = [];
+  showBouncer: Boolean = false;
+  indexBouncer: any = 0;
 
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 

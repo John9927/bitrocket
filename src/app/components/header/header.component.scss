@@ -76,6 +76,7 @@
   border-radius: 15px;
   width: 100px;
   justify-content: center;
+  position: relative;
 
   &:hover {
     background: rgba(219, 214, 214, 0.719);
@@ -120,6 +121,39 @@
   align-items: center;
   height: 38px;
   cursor: pointer;
+}
+
+.notification__bouncer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 79px;
+  border-radius: 50%;
+  top: -13px;
+  background: #8338ec;
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset -5px 6px 20px rgb(255 254 254 / 70%);
+}
+
+.bouncer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.label__bouncer {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
 }
 
 @media screen and (min-width: 1024px) {
