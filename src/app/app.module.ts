@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersComponent } from './components/orders/orders.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     DashboardComponent,
     CardComponent,
     LoginComponent,
-    OrdersComponent
+    OrdersComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

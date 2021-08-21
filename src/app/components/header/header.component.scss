@@ -45,13 +45,14 @@
 .button__container {
   justify-content: space-between;
   display: flex;
-  width: 250px;
+  // width: 250px;
 }
 
 .button {
   height: 40px;
   border-radius: 13px;
   cursor: pointer;
+  display: flex;
 }
 
 .label__receive {
@@ -62,9 +63,11 @@
   display: flex;
   text-align: left;
   color: #6a00ff;
+  margin-left: 10px;
 }
 
 .item {
+  margin: 0px 20px;
   display: flex;
   align-items: center;
   height: 49px;

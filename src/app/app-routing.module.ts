@@ -1,3 +1,4 @@
+import { CartComponent } from './components/cart/cart.component';
 import { GuardGuard } from './guard.guard';
 import { OrdersComponent } from './components/orders/orders.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'orders', component: OrdersComponent, canActivate: [GuardGuard] },
+  { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({
