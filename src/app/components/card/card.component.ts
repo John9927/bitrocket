@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  showOut: Boolean = false;
 
   constructor(private authService: AuthService) { }
+
   response: any = [];
+  amount: any = [];
 
   ngOnInit(): void {
+    this.getTotales();
     this.getDatas();
   }
 
@@ -25,4 +29,30 @@ export class CardComponent implements OnInit {
       }));
   }
 
+  dataArray: any = [];
+
+  //  Totale crediti che stanno nel magazzino
+  getTotales() {
+    this.authService.getTotale().subscribe({
+      next: (res) => {
+        console.log(res[0])
+      },
+      error: err => {
+        console.log("error occurred")
+      },
+      complete: () => {
+        console.log("subscription completed")
+      },
+    })
+  }
+
+
+  onClickBuy(id: any, euro: number, amount: number) {
+    console.log("Id: ", id);
+    console.log("Euro:", euro);
+    console.log("Crediti: ", amount);
+  }
+
 }
+
+

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { reduce } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isLoggedIn: Boolean = false;
+  totaleCrediti: any;
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In
@@ -30,5 +32,13 @@ export class AuthService {
 
   getData() {
     return this.firestore.collection('dati', ref => ref.orderBy('euro')).get();
+  }
+
+  getDataValues() {
+    return this.firestore.collection('dati', ref => ref.orderBy('euro')).valueChanges();
+  }
+
+  getTotale() {
+    return this.firestore.collection('magazzino', ref => ref.orderBy('totale')).valueChanges();
   }
 }
