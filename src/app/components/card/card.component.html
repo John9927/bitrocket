@@ -2,6 +2,26 @@
   <div class="border__card">
     <!-- Card -->
     <div class="container__card">
+      <div class="card" *ngFor="let r of response">
+        <div class="container__items">
+          <div class="container__image">
+            <img src="{{r.image}}" class="image">
+            <div class="label">
+              <span class="amount">{{r.amount}}</span>
+            </div>
+          </div>
+          <div class="container__euro">
+            <span class="euro">{{r.euro}}€</span>
+          </div>
+          <div class="container__button">
+            <div class="button">
+              <span class="label__buy">Buy</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
@@ -11,9 +31,7 @@
       <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
+      <div class="card"></div> -->
     </div>
 
     <div class="container__card__info">

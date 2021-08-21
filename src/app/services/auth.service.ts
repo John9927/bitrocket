@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class AuthService {
   isLoggedIn: Boolean = false;
-  constructor(public firebaseAuth: AngularFireAuth, public router: Router ) { }
+  constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In
   async signin(email: string, password: string) {
@@ -25,5 +26,9 @@ export class AuthService {
         var errorMessage = error.message;
         alert(error);
       });
+  }
+
+  getData() {
+    return this.firestore.collection('dati', ref => ref.orderBy('euro')).get();
   }
 }
