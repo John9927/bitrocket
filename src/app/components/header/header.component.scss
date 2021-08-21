@@ -7,10 +7,9 @@
   display: flex;
   width: 95%;
   margin: 30px auto;
-  height: 70px;
+  height: 100px;
   border: 1px solid white;
   align-items: center;
-  padding: 15px;
   border-radius: 20px;
   background: linear-gradient(
     90deg,
@@ -20,6 +19,13 @@
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.container {
+  display: flex;
+  width: 95%;
+  margin: 10px auto 10px auto;
+  align-items: center;
 }
 
 .container__button {
@@ -39,6 +45,7 @@
   justify-content: space-between;
   display: flex;
   width: 250px;
+  align-items: center;
 }
 
 .button {

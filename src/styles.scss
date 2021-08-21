@@ -7,6 +7,20 @@ body {
   background: linear-gradient(61deg, rgba(58,134,255,0.30885857761073177) 0%, rgba(131,56,236,1) 80%) no-repeat;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(119, 0, 255);    /* color of the scroll thumb */
+  // border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid transparent;  /* creates padding around scroll thumb */
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,4 +63,11 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    background: white !important;
+  }
 }
