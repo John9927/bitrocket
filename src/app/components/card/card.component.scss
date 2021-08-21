@@ -6,6 +6,7 @@
 
 .border__card {
   display: flex;
+  justify-content: space-between;
   width: 94%;
   height: auto;
   margin: 0 auto;
@@ -22,10 +23,9 @@
 .container__card {
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  width: 96%;
-  margin: auto auto;
+  height: 200px;
+  margin-left: 15px;
   gap: 20px;
-  // margin-left: 20px;
 }
 
 .card {
@@ -38,8 +38,37 @@
   border-radius: 25px;
 }
 
+.container__card__info {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: flex-end;
+}
 
+.card__info {
+  width: 100%;
+  background: red;
+  height: 730px;
+  display: flex;
+  border-radius: 20px;
+  margin: 20px;
+}
 
+@media screen and (max-width: 1485px) {
+  .container__card__info {
+    display: none;
+  }
+  .card__info {
+    display: none;
+  }
+  .container__card {
+    height: initial;
+    margin: 0 auto;
+  }
+  .border__card {
+    justify-content: initial;
+  }
+}
 @media screen and (max-width: 960px) {
   .container__card {
     grid-template-columns: auto auto auto;
@@ -63,6 +92,7 @@
   .container__card {
     grid-template-columns: auto;
     margin: 0 auto;
+    width: 100%;
   }
 
   .card {
