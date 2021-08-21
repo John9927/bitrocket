@@ -15,6 +15,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClickLogo() {
+    this.router.navigateByUrl('');
+  }
+
   onClickButton() {
     this.showHamburger = !this.showHamburger;
   }
