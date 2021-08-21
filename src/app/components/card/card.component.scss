@@ -6,7 +6,7 @@
 
 .border__card {
   display: flex;
-  width: 97%;
+  width: 94%;
   height: auto;
   margin: 0 auto;
   background-color: white;
@@ -22,8 +22,10 @@
 .container__card {
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  width: 100%;
+  width: 96%;
+  margin: auto auto;
   gap: 20px;
+  // margin-left: 20px;
 }
 
 .card {
@@ -31,24 +33,28 @@
   width: 200px;
   margin: 20px auto;
   height: 200px;
-  background: linear-gradient(135deg, #aaa4a4 0%, rgba(252, 252, 252) 100%);
+  background: #de2020;
   border: 1px solid #fffefe;
   border-radius: 25px;
 }
 
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 960px) {
   .container__card {
     grid-template-columns: auto auto auto;
+    margin-left: 0px;
+    margin: auto;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   .container__card {
     grid-template-columns: auto auto;
+    margin-left: 0px;
+    margin: auto;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .border__card {
     width: 93%;
     margin: 0 auto 20px auto;
@@ -56,10 +62,11 @@
 
   .container__card {
     grid-template-columns: auto;
+    margin: 0 auto;
   }
 
   .card {
-    width: 95%;
+    width: 100%;
     margin: 20px auto 8px auto;
   }
 }
