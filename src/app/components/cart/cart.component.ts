@@ -24,7 +24,9 @@ export class CartComponent implements OnInit {
     } else {
       this.index = false;
     }
-    if(this.authService.indexBouncer > 5 && window.innerWidth < 700) {
+    if(this.authService.indexBouncer < 5 && window.innerWidth < 700) {
+      this.index = true;
+    } else {
       this.index = true;
     }
   }
