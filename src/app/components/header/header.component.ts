@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
 
   showHamburger: Boolean = true;
+  showPopupError: Boolean = false;
+
   constructor(private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
@@ -33,8 +35,14 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickCart() {
-    if(this.authService.indexBouncer > 0) {
+    if (this.authService.indexBouncer > 0) {
       this.router.navigateByUrl('cart');
+    } else {
+      this.showPopupError = true;
+
+      setTimeout(() => {
+        this.showPopupError = false;
+      }, 1000)
     }
   }
 }

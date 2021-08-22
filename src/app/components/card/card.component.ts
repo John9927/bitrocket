@@ -35,7 +35,7 @@ export class CardComponent implements OnInit {
   getTotales() {
     this.authService.getTotale().subscribe({
       next: (res) => {
-        console.log(res[0])
+        // console.log(res[0])
       },
       error: err => {
         console.log("error occurred")
@@ -53,7 +53,6 @@ export class CardComponent implements OnInit {
     this.authService.indexBouncer++;
     this.authService.showBouncer = true;
     this.authService.showAddedCart = true;
-
     setTimeout(() => {
       this.authService.showAddedCart = false;
     }, 1000)
