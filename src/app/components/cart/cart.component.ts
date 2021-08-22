@@ -9,18 +9,24 @@ import { map } from 'rxjs/operators';
 export class CartComponent implements OnInit {
 
   constructor( public authService: AuthService ) { }
-  dataList: any = [];
   all: any = [];
+  data: any;
 
   ngOnInit(): void {
-    this.dataList = this.authService.allData;
-    var data = this.authService.allData;
-    var datadata = data.map(res => this.all = res.euro)
+    this.authService.dataList = this.authService.allData;
+    this.data = this.authService.allData;
+    var datadata = this.data.map(res => this.all = res.euro)
     this.all = this.sum(datadata);
   }
 
+  // Remove Items
   onClickRemoveItems(id: any) {
-    console.log(id)
+    this.authService.dataList = this.authService.dataList.filter((item: any) => item.Id !== id);
+    this.authService.allData = this.authService.dataList;
+    this.data = this.authService.allData;
+    var datadata = this.data.map(res => this.all = res.euro)
+    this.all = this.sum(datadata);
+    this.authService.indexBouncer--;
   }
 
   sum( obj: any = [] ) {

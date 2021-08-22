@@ -122,6 +122,7 @@
   </div>
 </div>
 
+<!-- Show Popup Empty shopping cart  -->
 <div class="container__modal__success" *ngIf="showPopupError">
   <div class="modal__success">
     <span class="container__check">
@@ -129,6 +130,18 @@
     </span>
     <span class="container__label">
       Empty shopping cart.
+    </span>
+  </div>
+</div>
+
+<!-- Show Popup Enter only one object in the cart  -->
+<div class="container__modal__success" *ngIf="authService.showPopupErrorTwoItems">
+  <div class="modal__success">
+    <span class="container__check">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+    <span class="container__label">
+      An object at a time
     </span>
   </div>
 </div>

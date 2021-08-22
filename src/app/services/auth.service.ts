@@ -15,7 +15,8 @@ export class AuthService {
   showAddedCart: Boolean = false;
   indexBouncer: any = 0;
   totaleData: any= [];
-
+  showPopupErrorTwoItems: Boolean = false;
+  dataList: any = [];
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In

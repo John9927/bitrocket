@@ -10,7 +10,7 @@
     <!-- Detail Cart -->
     <div class="container__detail__cart">
       <div class="detail__cart">
-        <div class="detail" *ngFor="let c of dataList">
+        <div class="detail" *ngFor="let c of authService.dataList">
           <div class="container__items">
             <div class="image" (click)="onClickRemoveItems(c.Id)">
               <img src="{{c.image}}">

@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
 
   response: any = [];
   amount: any = [];
+  buttonClicked: Boolean = false;
 
   ngOnInit(): void {
     this.getTotales();
@@ -35,7 +36,6 @@ export class CardComponent implements OnInit {
   getTotales() {
     this.authService.getTotale().subscribe({
       next: (res) => {
-        // console.log(res[0])
       },
       error: err => {
         console.log("error occurred")
@@ -48,14 +48,21 @@ export class CardComponent implements OnInit {
 
 
   onClickBuy(id: any, euro: number, amount: number, image: string) {
-    this.authService.allData.push({"Id": id, "euro": euro, "crediti": amount, "image": image });
-    this.authService.totaleData.push(euro);
-    this.authService.indexBouncer++;
-    this.authService.showBouncer = true;
-    this.authService.showAddedCart = true;
-    setTimeout(() => {
-      this.authService.showAddedCart = false;
-    }, 1000)
+    if (this.buttonClicked == false) {
+      this.authService.allData.push({ "Id": id, "euro": euro, "crediti": amount, "image": image });
+      this.authService.totaleData.push(euro);
+      this.authService.indexBouncer++;
+      this.authService.showBouncer = true;
+      this.authService.showAddedCart = true;
+      setTimeout(() => {
+        this.authService.showAddedCart = false;
+      }, 1000);
+    } else {
+      this.authService.showPopupErrorTwoItems = true;
+      setTimeout(() => {
+        this.authService.showPopupErrorTwoItems = false;
+      }, 1000)
+    }
   }
 
 }

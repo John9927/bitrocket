@@ -14,7 +14,7 @@
             <span class="euro">{{r.euro}}€</span>
           </div>
           <div class="container__button">
-            <div class="button" (click)="onClickBuy(r.id, r.euro, r.amount, r.image)">
+            <div class="button" [disabled]="buttonClicked" (click)="onClickBuy(r.id, r.euro, r.amount, r.image)">
               <span class="label__buy" *ngIf="!showOut">Buy</span>
               <span class="label__buy" *ngIf="showOut">Out of stock</span>
             </div>
