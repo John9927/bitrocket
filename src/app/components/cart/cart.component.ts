@@ -18,8 +18,8 @@ export class CartComponent implements OnInit {
     this.data = this.authService.allData;
     var datadata = this.data.map(res => this.all = res.euro)
     this.all = this.sum(datadata);
-
-    if(this.authService.indexBouncer > 5) {
+    console.log(window.innerWidth)
+    if(this.authService.indexBouncer > 5 && window.innerWidth > 1024) {
       this.index = true;
     } else {
       this.index = false;

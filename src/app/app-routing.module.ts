@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'orders', component: OrdersComponent, canActivate: [GuardGuard] },
-  { path: 'cart', component: CartComponent, canActivate: [Guard2Guard] },
+  { path: 'cart', component: CartComponent},
+  // , canActivate: [Guard2Guard]
 ];
 
 @NgModule({
