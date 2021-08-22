@@ -41,6 +41,14 @@
   flex-direction: column;
 }
 
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
 .detail__cart {
   display: flex;
   width: 90%;

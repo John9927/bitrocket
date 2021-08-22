@@ -11,12 +11,19 @@ export class CartComponent implements OnInit {
   constructor( public authService: AuthService ) { }
   all: any = [];
   data: any;
+  index: Boolean = false;
 
   ngOnInit(): void {
     this.authService.dataList = this.authService.allData;
     this.data = this.authService.allData;
     var datadata = this.data.map(res => this.all = res.euro)
     this.all = this.sum(datadata);
+
+    if(this.authService.indexBouncer > 5) {
+      this.index = true;
+    } else {
+      this.index = false;
+    }
   }
 
   // Remove Items
@@ -38,5 +45,7 @@ export class CartComponent implements OnInit {
     }
     return sum;
   }
+
+
 
 }
