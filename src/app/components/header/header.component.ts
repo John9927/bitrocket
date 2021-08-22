@@ -33,6 +33,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickCart() {
-    this.router.navigateByUrl('cart');
+    if(this.authService.indexBouncer > 0) {
+      this.router.navigateByUrl('cart');
+    }
   }
 }

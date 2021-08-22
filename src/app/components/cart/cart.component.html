@@ -9,7 +9,27 @@
 
     <!-- Detail Cart -->
     <div class="container__detail__cart">
-
+      <div class="detail__cart">
+        <div class="detail" *ngFor="let c of dataList">
+          <div class="container__items">
+            <div class="image" (click)="onClickRemoveItems(c.Id)">
+              <img src="{{c.image}}">
+            </div>
+            <div class="crediti">
+              {{c.crediti}}
+            </div>
+            <div class="euro">
+              {{c.euro}}€
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container__totale">
+        <div class="totale">
+          <div class="label">Total</div>
+          <div class="total">{{all}}€</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

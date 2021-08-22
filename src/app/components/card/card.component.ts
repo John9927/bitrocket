@@ -47,9 +47,9 @@ export class CardComponent implements OnInit {
   }
 
 
-  onClickBuy(id: any, euro: number, amount: number) {
-    this.authService.allData.push({"Id": id, "euro": euro, "crediti": amount });
-    console.log(this.authService.allData);
+  onClickBuy(id: any, euro: number, amount: number, image: string) {
+    this.authService.allData.push({"Id": id, "euro": euro, "crediti": amount, "image": image });
+    this.authService.totaleData.push(euro);
     this.authService.indexBouncer++;
     this.authService.showBouncer = true;
     this.authService.showAddedCart = true;
