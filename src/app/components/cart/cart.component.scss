@@ -149,6 +149,51 @@ img {
   display: flex;
   align-items: center;
   text-align: center;
-
   color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 720px) {
+}
+
+@media screen and (max-width: 500px) {
+  .container__double__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .container__user__informations {
+    order: 2;
+  }
+
+  .container__detail__cart {
+    order: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    flex-direction: column;
+    margin: 0 auto;
+    background: rgba(203, 202, 202, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 35px;
+  }
+
+  .container__totale {
+    position: relative;
+  }
+
+  .label {
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
 }
