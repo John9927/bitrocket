@@ -38,6 +38,7 @@
   border: 1px solid rgba(255, 255, 255, 0.7);
   position: relative;
   border-radius: 25px;
+  flex-direction: column;
 }
 
 .detail__cart {
@@ -112,10 +113,11 @@ img {
     rgba(255, 255, 255, 0.1) 100%
   );
   border: 1px solid #ffffff;
+  -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
   padding: 15px 0;
   bottom: 0px;
-  position: absolute;
+  /* position: absolute; */
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
 }
