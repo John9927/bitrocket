@@ -322,11 +322,15 @@ input {
   cursor: pointer;
 }
 
-.fa-paypal,
-.fa-credit-card,
-.crypto {
-  width: 59px;
+.fa-credit-card {
+  width: 75px;
   height: 45px;
+  margin-left: -10px;
+}
+
+.crypto {
+  width: 89px;
+  height: 48px;
 }
 
 .label__paymant__card {
