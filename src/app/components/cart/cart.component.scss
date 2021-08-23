@@ -307,6 +307,10 @@ input {
   box-sizing: border-box;
   border-radius: 15px;
   margin-right: 25px;
+
+  &:hover {
+    background: rgb(201, 198, 198);
+  }
 }
 
 .label__paymant {
@@ -316,6 +320,8 @@ input {
   height: 100%;
   display: flex;
   cursor: pointer;
+
+
 }
 
 .fa-paypal,
