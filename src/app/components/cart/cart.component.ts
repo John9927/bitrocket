@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
     return sum;
   }
 
-  onClickPaymant(all: any) {
-    console.log(all);
+  onClickPaymant(all: any, epic: string, email: string) {
+    console.log("Totale euro: ", all, "Epic Id:", epic, "Email: ", email);
   }
 }

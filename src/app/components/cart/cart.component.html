@@ -36,7 +36,7 @@
         <div class="paymants">
           <!-- PayPal -->
           <div class="card__paymants">
-            <div class="label__paymant" (click)="onClickPaymant(all)">
+            <div class="label__paymant" (click)="onClickPaymant(all, formEpicEmail.controls.epic.value, formEpicEmail.controls.email.value)">
               <i class="fab fa-paypal"></i>
               <span class="label__paymant__card">
                 Paypal
@@ -45,7 +45,7 @@
           </div>
           <!-- Credit Card -->
           <div class="card__paymants">
-            <div class="label__paymant" (click)="onClickPaymant(all)">
+            <div class="label__paymant" (click)="onClickPaymant(all, formEpicEmail.controls.epic.value, formEpicEmail.controls.email.value)">
               <i class="far fa-credit-card"></i>
               <span class="label__paymant__card">
                 Credit Card
@@ -54,7 +54,7 @@
           </div>
           <!-- Crypto -->
           <div class="card__paymants">
-            <div class="label__paymant" (click)="onClickPaymant(all)">
+            <div class="label__paymant" (click)="onClickPaymant(all, formEpicEmail.controls.epic.value, formEpicEmail.controls.email.value)">
               <svg class="crypto" width="29" height="46" viewBox="0 0 29 46" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
