@@ -1,3 +1,4 @@
+import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { map } from 'rxjs/operators';
@@ -8,10 +9,15 @@ import { map } from 'rxjs/operators';
 })
 export class CartComponent implements OnInit {
 
-  constructor( public authService: AuthService ) { }
+  constructor( public authService: AuthService, private fb: FormBuilder ) { }
   all: any = [];
   data: any;
   index: Boolean = false;
+
+  formEpicEmail = this.fb.group({
+    epic: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+  });
 
   ngOnInit(): void {
     this.authService.dataList = this.authService.allData;
@@ -51,7 +57,4 @@ export class CartComponent implements OnInit {
     }
     return sum;
   }
-
-
-
 }

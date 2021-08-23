@@ -2,12 +2,33 @@
 
 <div class="container__main">
   <div class="container__double__card">
-    <!-- User Informations -->
-    <div class="container__user__informations">
-      <div class="user__information">
-        <span class="label__user__information">
-          User informations
-        </span>
+    <div class="container__master__information">
+      <!-- User Informations -->
+      <div class="container__user__informations">
+        <div class="user__information">
+          <span class="label__user__information">
+            User informations
+          </span>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="container__form">
+        <form class="form" [formGroup]="formEpicEmail">
+          <input type="text" placeholder="Insert Epic ID" formControlName="epic">
+          <input type="text" placeholder="Insert Email" formControlName="email">
+        </form>
+      </div>
+      <!-- Warning -->
+      <div class="container__warning">
+        <div class="warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span class="label__warning">
+           <span style="color: red;">WARNING! &nbsp;</span>We’re currently selling items only on PC.<br>
+           <span style="color: red;">- Do not buy if you’re on XBOX/PSN/SWITCH.</span><br>
+            - Player must have purchased 500 credits or Esport Token and have 2FA to unlock trading with other player.<br>
+            - Player’ID must be the same, otherwise we cannot trade.
+          </span>
+        </div>
       </div>
     </div>
 
