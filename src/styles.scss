@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   display: fixed;
   width: 100%;
+  min-height: 100vh;
   background: linear-gradient(61deg, rgba(58,134,255,0.30885857761073177) 0%, rgba(131,56,236,1) 80%) no-repeat;
 }
 
