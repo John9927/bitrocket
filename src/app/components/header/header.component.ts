@@ -26,8 +26,16 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickButton2() {
+    if (this.authService.indexBouncer > 0) {
+      this.router.navigateByUrl('cart');
+    } else {
+      this.showPopupError = true;
+
+      setTimeout(() => {
+        this.showPopupError = false;
+      }, 1000)
+    }
     this.showHamburger = !this.showHamburger;
-    this.router.navigateByUrl('cart');
   }
 
   onClickHamburger() {

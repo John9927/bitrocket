@@ -23,11 +23,49 @@
         <div class="warning">
           <i class="fas fa-exclamation-triangle"></i>
           <span class="label__warning">
-           <span style="color: red;">WARNING! &nbsp;</span>We’re currently selling items only on PC.<br>
-           <span style="color: red;">- Do not buy if you’re on XBOX/PSN/SWITCH.</span><br>
-            - Player must have purchased 500 credits or Esport Token and have 2FA to unlock trading with other player.<br>
+            <span style="color: red;">WARNING! &nbsp;</span>We’re currently selling items only on PC.<br>
+            <span style="color: red;">- Do not buy if you’re on XBOX/PSN/SWITCH.</span><br>
+            - Player must have purchased 500 credits or Esport Token and have 2FA to unlock trading with other
+            player.<br>
             - Player’ID must be the same, otherwise we cannot trade.
           </span>
+        </div>
+      </div>
+      <!-- Paymants -->
+      <div class="container__paymants">
+        <div class="paymants">
+          <!-- PayPal -->
+          <div class="card__paymants">
+            <div class="label__paymant" (click)="onClickPaymant(all)">
+              <i class="fab fa-paypal"></i>
+              <span class="label__paymant__card">
+                Paypal
+              </span>
+            </div>
+          </div>
+          <!-- Credit Card -->
+          <div class="card__paymants">
+            <div class="label__paymant" (click)="onClickPaymant(all)">
+              <i class="far fa-credit-card"></i>
+              <span class="label__paymant__card">
+                Credit Card
+              </span>
+            </div>
+          </div>
+          <!-- Crypto -->
+          <div class="card__paymants">
+            <div class="label__paymant" (click)="onClickPaymant(all)">
+              <svg class="crypto" width="29" height="46" viewBox="0 0 29 46" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M28.266 23.4312L14.5001 31.7688L0.725098 23.4312L14.5001 0L28.266 23.4312ZM14.5001 34.4461L0.725098 26.1086L14.5001 46L28.2751 26.1086L14.5001 34.4461Z"
+                  fill="black" />
+              </svg>
+              <span class="label__paymant__card">
+                Crypto
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
