@@ -227,7 +227,7 @@ a {
     position: fixed;
     width: 60px;
     height: 60px;
-    top: 73px;
+    top: 85px;
     background: rgba(255, 255, 255, 0.35);
     border: 0.7px solid #8338ec;
     box-shadow: inset 10px 13px 19px -7px rgba(131, 56, 236, 0.58);
@@ -246,11 +246,19 @@ a {
   }
 
   .bouncer__popup__cart__mobile {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    z-index: 1;
+    position: fixed;
+  }
+
+  .popup__cart__mobile {
     position: fixed;
     width: 28px;
     height: 28px;
-    left: 246px;
-    top: 72px;
+    top: 85px;
+    right: 45px;
     border-radius: 50%;
     background: #8338ec;
     border: 0.5px solid rgba(255, 255, 255, 0.35);
