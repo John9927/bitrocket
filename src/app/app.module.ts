@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ReveiceItemFasterComponent } from './components/reveice-item-faster/reveice-item-faster.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     CardComponent,
     LoginComponent,
     OrdersComponent,
-    CartComponent
+    CartComponent,
+    ReveiceItemFasterComponent
   ],
   imports: [
     BrowserModule,

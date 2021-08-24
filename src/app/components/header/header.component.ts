@@ -38,6 +38,10 @@ export class HeaderComponent implements OnInit {
     this.showHamburger = !this.showHamburger;
   }
 
+  onClickReceiveItemFaster() {
+    this.router.navigateByUrl('receive-item-faster');
+  }
+
   onClickHamburger() {
     this.showHamburger = !this.showHamburger;
   }

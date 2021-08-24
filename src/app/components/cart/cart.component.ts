@@ -81,12 +81,8 @@ export class CartComponent implements OnInit {
           var purchase_units = order.purchase_units;
           var status = order.status;
           this.paidFor = true;
+          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'Oggetti Ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
 
-          console.log(order);
-          console.log(purchase_units);
-          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
-
-          // ,this.formEpicEmail.controls.epic.value , this.formEpicEmail.controls.email.value
         },
         onError: err => {
           console.log(err);
