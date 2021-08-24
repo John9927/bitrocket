@@ -17,6 +17,7 @@ export class AuthService {
   totaleData: any= [];
   showPopupErrorTwoItems: Boolean = false;
   dataList: any = [];
+  nomeCurrent: string;
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In
@@ -47,5 +48,9 @@ export class AuthService {
 
   getTotale() {
     return this.firestore.collection('magazzino', ref => ref.orderBy('totale')).valueChanges();
+  }
+
+  addData(dato: any) {
+    return this.firestore.collection('ordini').add(dato).then(() => {});
   }
 }

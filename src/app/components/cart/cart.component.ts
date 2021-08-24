@@ -1,15 +1,22 @@
 import { FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { map } from 'rxjs/operators';
+import { trigger } from '@angular/animations';
+// import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+
+declare var paypal;
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  // public payPalConfig?: IPayPalConfig;
 
-  constructor( public authService: AuthService, private fb: FormBuilder ) { }
+  constructor(public authService: AuthService, private fb: FormBuilder) { }
+
+  @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
+  paidFor = false;
   all: any = [];
   data: any;
   index: Boolean = false;
@@ -24,17 +31,57 @@ export class CartComponent implements OnInit {
     this.data = this.authService.allData;
     var datadata = this.data.map(res => this.all = res.euro)
     this.all = this.sum(datadata);
-    if(this.authService.indexBouncer > 5 && window.innerWidth > 700) {
+    if (this.authService.indexBouncer > 5 && window.innerWidth > 700) {
       this.index = true;
     } else {
       this.index = false;
     }
-    if(this.authService.indexBouncer < 5 && window.innerWidth < 700) {
+    if (this.authService.indexBouncer < 5 && window.innerWidth < 700) {
       this.index = true;
     }
-    else if(this.authService.indexBouncer > 5 && window.innerWidth < 700) {
+    else if (this.authService.indexBouncer > 5 && window.innerWidth < 700) {
       this.index = true;
     }
+
+    // PAYPAL
+    paypal
+      .Buttons({
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                description: this.authService.nomeCurrent,
+                amount: {
+                  value: this.all
+                }
+              }
+            ]
+          });
+        },
+        style: {
+          layout: 'horizontal',
+          fundingicons: 'true',
+          style: 'responsive',
+          color: 'blue',
+          shape: 'pill',
+          label: 'pay',
+          height: 40,
+        },
+        funding: {
+          allowed: [paypal.FUNDING.CREDIT]
+        },
+        allowed: [ paypal.FUNDING.CREDIT ],
+        onApprove: async (data, actions) => {
+          const order = await actions.order.capture();
+          this.paidFor = true;
+          console.log(order);
+          this.authService.addData(order);
+        },
+        onError: err => {
+          console.log(err);
+        }
+      })
+      .render(this.paypalElement.nativeElement);
   }
 
   // Remove Items
@@ -47,11 +94,11 @@ export class CartComponent implements OnInit {
     this.authService.indexBouncer--;
   }
 
-  sum( obj: any = [] ) {
+  sum(obj: any = []) {
     var sum = 0;
-    for( var el in obj ) {
-      if( obj.hasOwnProperty( el ) ) {
-        sum += parseFloat( obj[el] );
+    for (var el in obj) {
+      if (obj.hasOwnProperty(el)) {
+        sum += parseFloat(obj[el]);
       }
     }
     return sum;

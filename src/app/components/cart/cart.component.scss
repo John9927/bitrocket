@@ -23,6 +23,7 @@
   mix-blend-mode: normal;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 25px;
+  position: relative;
 }
 
 .container__detail__cart {
@@ -291,10 +292,9 @@ input {
 }
 
 .paymants {
-  display: grid;
   width: 90%;
   margin: 0 auto;
-  height: 66px;
+  height: 100px;
   grid-template-columns: 140px 140px 140px;
   gap: 20px;
 }
@@ -355,8 +355,10 @@ input {
 }
 
 .info {
-  width: 95%;
+  width: 100%;
+  position: absolute;
   margin: 0 auto;
+  bottom: 22px;
 }
 
 .label__info {
@@ -383,14 +385,12 @@ input {
   }
 
   .paymants {
-    align-items: center;
-    grid-template-columns: 50% 50%;
-    gap: 0px;
-    height: initial;
+    height: auto;
+    margin: auto;
   }
 
   .container__paymants {
-    height: 213px;
+    height: 150px;
     width: 100%;
     margin: 30px auto 10px auto;
     background: rgba(203, 202, 202, 0.35);
