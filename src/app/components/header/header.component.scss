@@ -55,7 +55,6 @@ a {
 .button__container {
   justify-content: space-between;
   display: flex;
-  // width: 250px;
 }
 
 .button {
@@ -112,20 +111,16 @@ a {
 }
 
 .items {
-  width: 93%;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid white;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  height: 40px;
+  border-radius: 0px;
+  margin-bottom: 21px;
+  height: 37px;
   align-items: center;
   justify-content: center;
-  margin-top: -25px;
-  background: linear-gradient(
-    90deg,
-    rgba(250, 230, 230, 0.6) 0%,
-    rgba(255, 255, 255, 0.1) 80%
-  );
+  margin-top: -14px;
+  background: #ededed;
 }
 
 .item__menu {
@@ -211,17 +206,82 @@ a {
   color: #8338ec;
 }
 
+.container__popup__mobile {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
 }
 
 @media screen and (max-width: 720px) {
+  // Container popup mobile
+  .container__popup__mobile {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    z-index: 1;
+    position: relative;
+  }
+
+  .popup__mobile {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: 73px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 0.7px solid #8338ec;
+    box-shadow: inset 10px 13px 19px -7px rgba(131, 56, 236, 0.58);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fa-shopping-cart {
+    width: 28px;
+    height: 25px;
+    color: #8338ec;
+    margin-left: -2px;
+  }
+
+  .bouncer__popup__cart__mobile {
+    position: fixed;
+    width: 28px;
+    height: 28px;
+    left: 246px;
+    top: 72px;
+    border-radius: 50%;
+    background: #8338ec;
+    border: 0.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: inset -5px 6px 20px rgb(255 254 254 / 70%);
+  }
+
+  .label__popup__cart__mobile {
+    font-family: IBM Plex Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 2px;
+    color: #ffffff;
+  }
+
   .container__hamburger {
     display: flex;
   }
 
   .header {
     padding: 0px 0px;
-    width: 93%;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    border-radius: 0px;
+    height: 80px;
+    box-shadow: 0 8px 32px 0 rgb(21 21 21 / 19%);
   }
 
   .button__container {
@@ -240,6 +300,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    zoom: 75%;
   }
 
   .logo {

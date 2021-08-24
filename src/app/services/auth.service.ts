@@ -13,6 +13,7 @@ export class AuthService {
   allData: any = [];
   showBouncer: Boolean = false;
   showAddedCart: Boolean = false;
+  showPopupCartMobile: Boolean = false;
   indexBouncer: any = 0;
   totaleData: any= [];
   showPopupErrorTwoItems: Boolean = false;

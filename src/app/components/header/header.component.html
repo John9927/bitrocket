@@ -90,7 +90,7 @@
 <!-- Menu Mobile -->
 <div class="container__items" *ngIf="!showHamburger">
   <div class="items">
-    <span class="item__menu" (click)="onClickButton()">
+    <span class="item__menu" (click)="onClickReceiveItemFaster()">
       Receive item faster
     </span>
   </div>
@@ -103,6 +103,17 @@
     <span class="item__menu" (click)="onClickButton1()">
       Official Discord Server
     </span>
+  </div>
+</div>
+
+
+<!-- Popup Cart Mobile -->
+<div class="container__popup__mobile" *ngIf="authService.showPopupCartMobile && this.authService.indexBouncer > 0">
+  <div class="popup__mobile"   (click)="onClickCart()">
+    <i class="fas fa-shopping-cart"></i>
+  </div>
+  <div class="bouncer__popup__cart__mobile">
+    <span class="label__popup__cart__mobile">{{authService.indexBouncer}}</span>
   </div>
 </div>
 

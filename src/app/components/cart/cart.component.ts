@@ -42,6 +42,10 @@ export class CartComponent implements OnInit {
     else if (this.authService.indexBouncer > 5 && window.innerWidth < 700) {
       this.index = true;
     }
+    setTimeout(() => {
+      this.authService.showPopupCartMobile = false;
+    }, 10)
+
 
     // PAYPAL
     paypal
