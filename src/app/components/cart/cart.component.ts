@@ -73,9 +73,20 @@ export class CartComponent implements OnInit {
         allowed: [ paypal.FUNDING.CREDIT ],
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
+          var time = order.update_time;
+          var id = order.id;
+          var email_address = order.payer.email_address;
+          var given_mame = order.payer.name.given_name;
+          var surname = order.payer.name.surname;
+          var purchase_units = order.purchase_units;
+          var status = order.status;
           this.paidFor = true;
+
           console.log(order);
-          this.authService.addData(order);
+          console.log(purchase_units);
+          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
+
+          // ,this.formEpicEmail.controls.epic.value , this.formEpicEmail.controls.email.value
         },
         onError: err => {
           console.log(err);
