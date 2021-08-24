@@ -201,7 +201,13 @@
   .card {
     width: 100%;
     margin: 20px auto 8px auto;
-    background: rgb(204, 200, 200);
+    background: linear-gradient(
+      310deg
+      ,#dadbdf 30%,#0000 0),linear-gradient(
+      340deg
+      ,#0000 58%,#fff 0), #f8f8f6!important;
+    border: 1px solid #8338ec;
+    border-radius: 25px;
   }
 
   .container__image {
