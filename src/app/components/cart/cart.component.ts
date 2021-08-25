@@ -11,8 +11,6 @@ declare var paypal;
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  // public payPalConfig?: IPayPalConfig;
-
   constructor(public authService: AuthService, private fb: FormBuilder) { }
 
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
@@ -28,7 +26,6 @@ export class CartComponent implements OnInit {
   });
 
   ngOnInit(): void {
-
     setInterval(() => {
       if(this.formEpicEmail.valid) {
         this.disabledPaypal = true;

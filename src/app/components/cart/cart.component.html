@@ -47,19 +47,19 @@
       <div class="container__paymants">
         <div class="paymants">
           <!-- PayPal -->
-          <div *ngIf="formEpicEmail.controls.email.invalid || formEpicEmail.controls.epic.invalid" style="color: red; display: flex; justify-content: center;">
+          <div *ngIf="formEpicEmail.controls.email.invalid || formEpicEmail.controls.epic.invalid"
+            style="color: red; display: flex; justify-content: center;">
             <span>Fill the Epic and email fields</span>
           </div>
           <div class="paypal" [ngClass]="{'disabled': !this.disabledPaypal}" #paypal></div>
         </div>
       </div>
-
       <!-- Info -->
       <div class="container__info">
         <div class="info">
           <span class="label__info">
-            Once we reveice the payments, we will add the player as soon as possible. Check <a
-              style="color: red;" href="receive-item-faster">this article</a> to see how you
+            Once we reveice the payments, we will add the player as soon as possible. Check <a style="color: red;"
+              href="receive-item-faster">this article</a> to see how you
             can receive your items faster. We also strongly recommend to join our Discord server. There you cant contact
             and talk direclty to the traders that will deliver your orders.
           </span>
