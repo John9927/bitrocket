@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
   all: any = [];
   data: any;
   index: Boolean = false;
+  disabledPaypal: Boolean = false;
 
   formEpicEmail = this.fb.group({
     epic: ['', [Validators.required]],
@@ -27,6 +28,15 @@ export class CartComponent implements OnInit {
   });
 
   ngOnInit(): void {
+
+    setInterval(() => {
+      if(this.formEpicEmail.valid) {
+        this.disabledPaypal = true;
+      } else {
+        this.disabledPaypal = false;
+      }
+    }, 500);
+
     this.authService.dataList = this.authService.allData;
     this.data = this.authService.allData;
     var datadata = this.data.map(res => this.all = res.euro)

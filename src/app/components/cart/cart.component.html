@@ -14,8 +14,20 @@
       <!-- Form -->
       <div class="container__form">
         <form class="form" [formGroup]="formEpicEmail">
-          <input type="text" placeholder="Insert Epic ID" formControlName="epic">
-          <input type="text" placeholder="Insert Email" formControlName="email">
+          <div style="display: flex; flex-direction: column; width: 100%;">
+            <input type="text" placeholder="Insert Epic ID" formControlName="epic">
+            <div style="justify-content: center; width: 100%; display: flex;color:red;"
+              *ngIf="formEpicEmail.controls.epic.invalid && formEpicEmail.controls.epic.touched">
+              <span>Required field</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; width: 100%;">
+            <input type="text" placeholder="Insert Email" formControlName="email">
+            <div style="justify-content: center; width: 100%; display: flex;color:red;"
+              *ngIf="formEpicEmail.controls.email.invalid && formEpicEmail.controls.email.touched">
+              <span>Enter a valid email</span>
+            </div>
+          </div>
         </form>
       </div>
       <!-- Warning -->
@@ -35,7 +47,10 @@
       <div class="container__paymants">
         <div class="paymants">
           <!-- PayPal -->
-          <div #paypal></div>
+          <div *ngIf="formEpicEmail.controls.email.invalid || formEpicEmail.controls.epic.invalid" style="color: red; display: flex; justify-content: center;">
+            <span>Fill the Epic and email fields</span>
+          </div>
+          <div class="paypal" [ngClass]="{'disabled': !this.disabledPaypal}" #paypal></div>
         </div>
       </div>
 
@@ -43,8 +58,8 @@
       <div class="container__info">
         <div class="info">
           <span class="label__info">
-            Once we reveice the payments, we will add the player as soon as possible. Check <span
-              style="color: red;">this article</span> to see how you
+            Once we reveice the payments, we will add the player as soon as possible. Check <a
+              style="color: red;" href="receive-item-faster">this article</a> to see how you
             can receive your items faster. We also strongly recommend to join our Discord server. There you cant contact
             and talk direclty to the traders that will deliver your orders.
           </span>
@@ -82,4 +97,3 @@
 <div *ngIf="paidFor">
   <h1>Pagamento riuscito</h1>
 </div>
-

@@ -219,8 +219,12 @@ img {
   color: #000000;
 }
 
+.disabled {
+  pointer-events:none;
+}
+
 input {
-  width: 44%;
+  width: 92%;
   height: 44px;
 
   background: linear-gradient(
@@ -292,11 +296,10 @@ input {
 }
 
 .paymants {
-  width: 90%;
-  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   height: 100px;
-  grid-template-columns: 140px 140px 140px;
-  gap: 20px;
 }
 
 .card__paymants {
@@ -370,6 +373,15 @@ input {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.paypal {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 960px) {
   .paymants {
     grid-template-columns: 140px 140px;
@@ -423,7 +435,7 @@ input {
     width: 90%;
     margin-left: -3px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
   }
 
   .container__main {
