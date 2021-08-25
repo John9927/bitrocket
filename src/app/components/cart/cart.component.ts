@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,10 +12,9 @@ declare var paypal;
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  constructor(public authService: AuthService, private fb: FormBuilder) { }
+  constructor(public authService: AuthService, private fb: FormBuilder, public router: Router) { }
 
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
-  paidFor = false;
   all: any = [];
   data: any;
   index: Boolean = false;
@@ -86,14 +86,14 @@ export class CartComponent implements OnInit {
           const order = await actions.order.capture();
           var time = order.update_time;
           var id = order.id;
+          this.authService.idPayment = order.id;
           var email_address = order.payer.email_address;
           var given_mame = order.payer.name.given_name;
           var surname = order.payer.name.surname;
           var purchase_units = order.purchase_units;
           var status = order.status;
-          this.paidFor = true;
           this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'Oggetti Ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
-
+          this.router.navigateByUrl('payment-accepted');
         },
         onError: err => {
           console.log(err);

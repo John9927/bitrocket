@@ -14,6 +14,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { ReveiceItemFasterComponent } from './components/reveice-item-faster/reveice-item-faster.component';
+import { PaymentAcceptedComponent } from './components/payment-accepted/payment-accepted.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReveiceItemFasterComponent } from './components/reveice-item-faster/rev
     LoginComponent,
     OrdersComponent,
     CartComponent,
-    ReveiceItemFasterComponent
+    ReveiceItemFasterComponent,
+    PaymentAcceptedComponent
   ],
   imports: [
     BrowserModule,

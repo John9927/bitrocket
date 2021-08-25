@@ -1,0 +1,112 @@
+.container__main {
+  display: flex;
+  width: 100%;
+}
+
+.container__border {
+  width: 95%;
+  margin: 0 auto;
+  height: 737px;
+  background: linear-gradient(
+    127.52deg,
+    rgba(255, 255, 255, 0.0525) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  mix-blend-mode: normal;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+}
+
+.container__payment {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 181px;
+  margin: 40px auto;
+}
+
+.payment {
+  width: 707px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.container__items {
+  display: flex;
+  width: 90%;
+  margin: 25px auto;
+}
+
+.container__label__payment__accepted {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 120px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.label__payment {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 39px;
+  color: #8338ec;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.label__id {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: rgba(255, 0, 110, 0.57);
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    zoom: 60%;
+  }
+
+  .container__items {
+    align-items: center;
+  }
+
+  .label__payment {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .container__label__payment__accepted {
+    justify-content: center;
+    margin-left: 15px;
+  }
+
+  .container__border {
+    height: initial;
+  }
+
+  .label__id {
+    font-size: 15px;
+  }
+
+  .payment {
+    width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(
+      135deg,
+      rgba(252, 252, 252, 0.35) 0%,
+      rgba(252, 252, 252, 0) 100%
+    );
+    border: 1px solid #8338ec;
+    border-radius: 25px;
+  }
+}

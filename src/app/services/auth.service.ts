@@ -19,6 +19,9 @@ export class AuthService {
   showPopupErrorTwoItems: Boolean = false;
   dataList: any = [];
   nomeCurrent: string;
+  paymentAccepted: Boolean = true;
+  idPayment: any;
+
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 
   // Sign In

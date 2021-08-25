@@ -1,3 +1,4 @@
+import { PaymentAcceptedComponent } from './components/payment-accepted/payment-accepted.component';
 import { ReveiceItemFasterComponent } from './components/reveice-item-faster/reveice-item-faster.component';
 import { CartComponent } from './components/cart/cart.component';
 import { GuardGuard } from './guard.guard';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent, canActivate: [GuardGuard] },
   { path: 'cart', component: CartComponent, canActivate: [Guard2Guard]},
   { path: 'receive-item-faster', component: ReveiceItemFasterComponent},
+  { path: 'payment-accepted', component: PaymentAcceptedComponent},
 ];
 
 @NgModule({
