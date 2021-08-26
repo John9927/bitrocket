@@ -14,15 +14,12 @@
   background-color: rgba(255, 255, 255, 0.37);
   border-radius: 25px;
   border: 1px solid white;
-  // -webkit-backdrop-filter: blur(5px);
-  // backdrop-filter: blur(5px);
   margin-bottom: 30px;
 }
 
 .container__card {
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  height: 200px;
   margin-left: 20px;
   gap: 20px;
 }
@@ -51,7 +48,7 @@
 .card__info {
   width: 100%;
   background: red;
-  height: 730px;
+  height: auto;
   display: flex;
   border-radius: 20px;
   margin: 20px;
@@ -157,12 +154,47 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+// Right items
+.container__items {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.title__card__info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.imageSell {
+  zoom: 34%;
+}
+
+.description__card__info {
+  display: flex;
+  width: 90%;
+  margin: 0 auto 40px auto;
+}
+
+.span__description__card__info {
+  left: 25px;
+  top: 108px;
+  font-family: Electrolize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 25px;
+  color: #000000;
+}
+
 @media screen and (max-width: 1485px) {
   .container__card__info {
-    display: none;
+    // display: none;
   }
   .card__info {
-    display: none;
+    // display: none;
   }
   .container__card {
     height: initial;
@@ -170,6 +202,7 @@
   }
   .border__card {
     justify-content: initial;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 960px) {
@@ -187,6 +220,16 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .container__card__info {
+    background: rgba(131, 56, 236, 0.1);
+    border: 1px solid #8338ec;
+    border-radius: 35px;
+  }
+
+  .card__info {
+    border: 0;
+  }
+
   .border__card {
     width: 93%;
     margin: 0 auto 20px auto;
@@ -194,18 +237,15 @@
 
   .container__card {
     grid-template-columns: auto;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     width: 100%;
   }
 
   .card {
     width: 100%;
     margin: 20px auto 8px auto;
-    background: linear-gradient(
-      310deg
-      ,#dadbdf 30%,#0000 0),linear-gradient(
-      340deg
-      ,#0000 58%,#fff 0), #f8f8f6!important;
+    background: linear-gradient(310deg, #dadbdf 30%, #0000 0),
+      linear-gradient(340deg, #0000 58%, #fff 0), #f8f8f6 !important;
     border: 1px solid #8338ec;
     border-radius: 25px;
   }
