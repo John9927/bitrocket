@@ -1,11 +1,12 @@
 .container__main {
   display: flex;
   width: 100%;
+  flex-direction: column;
 }
 
 .main {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   justify-content: space-between;
   width: 95%;
   height: auto;
@@ -75,8 +76,6 @@
   display: none;
 }
 
-
-
 .container__right__items {
   display: flex;
   width: 60%;
@@ -104,6 +103,37 @@
   color: #000000;
 }
 
+// Second Card
+.container__second__card {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 20px auto;
+  justify-content: space-between;
+  height: auto;
+}
+
+.container__description__second__card {
+  display: flex;
+  width: 100%;
+}
+
+.label__description__second__card {
+  font-family: Electrolize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.container__image__3 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1300px) {
   .span__left {
     font-size: 40px;
@@ -128,7 +158,7 @@
     display: flex;
     flex-direction: column;
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     background: rgba(131, 56, 236, 0.1);
     border: 1px solid #8338ec;
     border-radius: 35px;
@@ -209,6 +239,18 @@
   }
 
   .container__right__items {
+    display: none;
+  }
+
+  img {
+    max-width: 95%;
+  }
+
+  .label__description__second__card {
+    font-size: 14px;
+  }
+
+  .--hide {
     display: none;
   }
 }
