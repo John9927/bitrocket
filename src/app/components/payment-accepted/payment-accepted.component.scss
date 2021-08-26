@@ -6,7 +6,7 @@
 .container__border {
   width: 95%;
   margin: 0 auto;
-  height: 737px;
+  height: auto;
   background: linear-gradient(
     127.52deg,
     rgba(255, 255, 255, 0.0525) 0%,
@@ -22,7 +22,7 @@
   width: 100%;
   justify-content: center;
   height: 181px;
-  margin: 40px auto;
+  margin: 40px auto 100px auto;
 }
 
 .payment {
@@ -71,13 +71,34 @@
   color: rgba(255, 0, 110, 0.57);
 }
 
+.description__payment {
+  display: flex;
+  width: 95%;
+  margin: 0 auto 50px auto;
+}
+
+.label__description {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 29px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 @media screen and (max-width: 600px) {
   .logo {
     zoom: 60%;
   }
 
+  .container__payment {
+    margin: 40px auto;
+  }
+
   .container__items {
     align-items: center;
+    margin: 15px auto;
   }
 
   .label__payment {
@@ -99,7 +120,8 @@
   }
 
   .payment {
-    width: 80%;
+    width: 95%;
+    height: 86%;
     margin: 0 auto;
     background: linear-gradient(
       135deg,
@@ -108,5 +130,12 @@
     );
     border: 1px solid #8338ec;
     border-radius: 25px;
+
+  }
+
+  .label__description {
+    font-size: 13px;
+    line-height: 14px;
+    text-align: left;
   }
 }

@@ -21,6 +21,7 @@ export class AuthService {
   nomeCurrent: string;
   paymentAccepted: Boolean = true;
   idPayment: any;
+  paymentSuccessAcceptedGuard: Boolean = false;
 
   constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
 

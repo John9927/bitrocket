@@ -93,7 +93,10 @@ export class CartComponent implements OnInit {
           var purchase_units = order.purchase_units;
           var status = order.status;
           this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'Oggetti Ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
+          this.authService.indexBouncer = 0; //Reset index
+          this.authService.paymentSuccessAcceptedGuard = true;
           this.router.navigateByUrl('payment-accepted');
+
         },
         onError: err => {
           console.log(err);
