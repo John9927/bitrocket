@@ -281,6 +281,12 @@ a {
 
   .container__hamburger {
     display: flex;
+    color: black;
+    align-items: center;
+  }
+
+  .fa-discord {
+    margin: 0px 25px;
   }
 
   .header {
@@ -334,5 +340,19 @@ a {
 
   100% {
     width: 394px;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .container__hamburger {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .fa-discord {
+    color: rgb(129, 0, 204);
+    margin: 0;
   }
 }
