@@ -55,6 +55,7 @@ export class CardComponent implements OnInit {
       this.authService.indexBouncer++;
       this.authService.showBouncer = true;
       this.authService.showAddedCart = true;
+      this.buttonClicked = true;
       setTimeout(() => {
         this.authService.showAddedCart = false;
       }, 1000);
