@@ -13,11 +13,14 @@ export class CardComponent implements OnInit {
 
   response: any = [];
   amount: any = [];
-  buttonClicked: Boolean = false;
+
 
   ngOnInit(): void {
     this.getTotales();
     this.getDatas();
+    if(this.authService.indexBouncer > 0) {
+      this.authService.buttonClicked = true;
+    }
   }
 
   getDatas() {
@@ -48,14 +51,14 @@ export class CardComponent implements OnInit {
 
 
   onClickBuy(id: any, euro: number, amount: number, image: string, nome: string) {
-    if (this.buttonClicked == false) {
+    if (this.authService.buttonClicked == false) {
       this.authService.allData.push({ "Id": id, "euro": euro, "crediti": amount, "image": image, "Nome": nome });
       this.authService.nomeCurrent = nome;
       this.authService.totaleData.push(euro);
       this.authService.indexBouncer++;
       this.authService.showBouncer = true;
       this.authService.showAddedCart = true;
-      this.buttonClicked = true;
+      this.authService.buttonClicked = true;
       setTimeout(() => {
         this.authService.showAddedCart = false;
       }, 1000);

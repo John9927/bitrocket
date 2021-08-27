@@ -14,7 +14,8 @@
             <span class="euro">{{r.euro}}€</span>
           </div>
           <div class="container__button">
-            <div class="button" [ngClass]="{'disabledButton': buttonClicked}" (click)="onClickBuy(r.id, r.euro, r.amount, r.image, r.nome)">
+            <div class="button" [ngClass]="{'disabledButton': authService.buttonClicked}"
+              (click)="onClickBuy(r.id, r.euro, r.amount, r.image, r.nome)">
               <span class="label__buy" *ngIf="!showOut">Buy</span>
               <span class="label__buy" *ngIf="showOut">Out of stock</span>
             </div>
@@ -32,11 +33,14 @@
           <div class="description__card__info">
             <span class="span__description__card__info">
               Join our Discord server <br>
-              In <span style="color: #FF006E;">#sell-to-us</span> channel you can tag a <span style="color: #6A00FF;">@Trader</span><br>
+              In <span style="color: #FF006E;">#sell-to-us</span> channel you can tag a <span
+                style="color: #6A00FF;">@Trader</span><br>
               <br>
-              We can pay with <span style="color: #2400FF;">PayPal</span> or <span style="color: #FFC83A;">Cryptocurrency</span>.<br>
+              We can pay with <span style="color: #2400FF;">PayPal</span> or <span
+                style="color: #FFC83A;">Cryptocurrency</span>.<br>
               <br>
-              Read <span style="color: #FF006E;">#sell-to-us-prices</span> to check what are we buying and the price we offer.<br>
+              Read <span style="color: #FF006E;">#sell-to-us-prices</span> to check what are we buying and the price we
+              offer.<br>
             </span>
           </div>
         </div>

@@ -21,6 +21,7 @@ export class AuthService {
   dataList: any = [];
   nomeCurrent: string;
   paymentAccepted: Boolean = true;
+  buttonClicked: Boolean = false;
   idPayment: any;
   paymentSuccessAcceptedGuard: Boolean = false;
 
