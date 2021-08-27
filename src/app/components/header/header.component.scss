@@ -13,6 +13,20 @@ a {
   color: #6a00ff;
 }
 
+.discord__a {
+  text-decoration: none;
+  color: #6a00ff;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.label__info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .header {
   display: flex;
   width: 95%;
@@ -342,7 +356,6 @@ a {
     width: 394px;
   }
 }
-
 
 @media screen and (max-width: 350px) {
   .container__hamburger {

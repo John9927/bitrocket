@@ -9,6 +9,7 @@ import { reduce } from 'rxjs/operators';
 })
 export class AuthService {
   isLoggedIn: Boolean = false;
+  showPopupFirst: Boolean = true;
   totaleCrediti: any;
   allData: any = [];
   showBouncer: Boolean = false;

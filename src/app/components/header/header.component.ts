@@ -11,11 +11,20 @@ export class HeaderComponent implements OnInit {
 
   showHamburger: Boolean = true;
   showPopupError: Boolean = false;
+  body: any;
 
   constructor(private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.showPopupCartMobile = true;
+  }
+
+  onClickInfo() {
+    this.authService.showPopupFirst = true;
+    this.body = document.body;
+    if(this.authService.showPopupFirst) {
+      this.body.style.overflow = "hidden";
+    }
   }
 
   onClickLogo() {
@@ -31,7 +40,6 @@ export class HeaderComponent implements OnInit {
       this.router.navigateByUrl('cart');
     } else {
       this.showPopupError = true;
-
       setTimeout(() => {
         this.showPopupError = false;
       }, 1000)
