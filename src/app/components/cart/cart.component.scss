@@ -262,6 +262,28 @@ input {
   }
 }
 
+.container__delete {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  justify-content: center;
+}
+
+.deleteItems {
+  display: flex;
+  justify-content: center;
+  background: red;
+  height: 100%;
+  width: 150px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(126, 8, 8);
+    color: white;
+  }
+}
+
 .container__warning {
   display: flex;
   width: 100%;
