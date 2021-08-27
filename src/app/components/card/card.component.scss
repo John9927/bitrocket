@@ -163,7 +163,15 @@
   );
 
   &:hover {
-    background: gray;
+    background: linear-gradient(
+      90deg,
+      rgba(87, 85, 86, 0.85) 0%,
+      rgba(92, 91, 94, 0.85) 49.48%,
+      rgba(56, 57, 58, 0.85) 100%
+    );
+    .label__buy {
+      color: #000000;
+    }
   }
 }
 

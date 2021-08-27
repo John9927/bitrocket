@@ -113,6 +113,10 @@ export class CartComponent implements OnInit {
     var datadata = this.data.map(res => this.all = res.euro)
     this.all = this.sum(datadata);
     this.authService.indexBouncer--;
+
+    if(this.authService.indexBouncer == 0) {
+      this.authService.buttonClicked = true;
+    }
   }
 
   sum(obj: any = []) {

@@ -18,8 +18,10 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.getTotales();
     this.getDatas();
-    if(this.authService.indexBouncer > 0) {
+    if(this.authService.indexBouncer >= 1) {
       this.authService.buttonClicked = true;
+    } else {
+      this.authService.buttonClicked = false;
     }
   }
 
