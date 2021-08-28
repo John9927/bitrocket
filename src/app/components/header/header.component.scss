@@ -250,6 +250,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
 
   .fa-shopping-cart {
@@ -270,6 +271,7 @@ a {
   .popup__cart__mobile {
     position: fixed;
     width: 28px;
+    cursor: pointer;
     height: 28px;
     top: 85px;
     right: 45px;
