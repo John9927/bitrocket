@@ -1,3 +1,21 @@
+<div class="container__showPopup" *ngIf="showPopupSicuro">
+  <div class="showPopup">
+    <div class="container__label__showPopup">
+      <span class="span__label">
+        Sei Sicuro??
+      </span>
+    </div>
+    <div class="container__button__showPopup">
+      <div (click)="onClickSi()">
+        <button class="button__item">SI</button>
+      </div>
+      <div (click)="onClickNo()">
+        <button class="button__item">NO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-header></app-header>
 
 <div class="container__orders">
@@ -125,3 +143,6 @@
     </div>
   </div>
 </div>
+
+
+

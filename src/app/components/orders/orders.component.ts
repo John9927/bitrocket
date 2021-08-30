@@ -23,12 +23,6 @@ export class OrdersComponent implements OnInit {
   responseNumOrdine: any;
   responseEmail: any;
 
-
-
-
-
-
-
   constructor(public authService: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -79,7 +73,16 @@ export class OrdersComponent implements OnInit {
 
   onClickButtonCompleted() {
     this.showPopupSicuro = true;
+  }
+
+  onClickSi() {
+    this.showPopupSicuro = false;
     this.authService.deleteDocument(this.dataPath, `${this.idCheck}`);
     this.getOrdini();
+    this.showButton = false;
+  }
+
+  onClickNo() {
+    this.showPopupSicuro = false;
   }
 }
