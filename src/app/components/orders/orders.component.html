@@ -27,21 +27,31 @@
             </div>
           </div>
 
-          <div class="container__completare__response" *ngFor="let r of response" >
-            <div class="circle">
-              <i class="far fa-circle"></i>
+          <form>
+            <div class="container__completare__response" *ngFor="let r of response">
+              <div class="circle">
+                <input type="checkbox" (ngModel)="isChecked" (change)="checkValue($event, r.id)">
+              </div>
+              <button class="container__button" (click)="onClickResponse(r.idPayPal)">
+                <div class="epic__id">
+                  {{r.idEpic}}
+                </div>
+                <div class="num__ordine">
+                  {{r.idPayPal}}
+                </div>
+                <div class="data">
+                  {{r.time | date}}
+                </div>
+              </button>
             </div>
-            <button class="container__button" (click)="onClickResponse(r.id)">
-              <div class="epic__id">
-                {{r.idEpic}}
+          </form>
+
+          <div class="container__button__completed" *ngIf="showButton">
+            <div class="button__completed" (click)="onClickButtonCompleted()">
+              <div class="button__">
+                <button>Completed</button>
               </div>
-              <div class="num__ordine">
-                {{r.id}}
-              </div>
-              <div class="data">
-                {{r.time | date}}
-              </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>
@@ -50,7 +60,7 @@
           <span>Info Ordine</span>
         </div>
         <div class="container__info__ordine">
-          <div class="items__ordine" *ngIf="showInfoOrdine">
+          <div class="items__ordine" *ngIf="showInfoOrdine == true">
             <div class="items__items">
               <span>
                 Epic ID: &nbsp;

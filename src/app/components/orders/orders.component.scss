@@ -88,6 +88,21 @@
   padding: 5px 0px 5px 5px;
 }
 
+.container__check {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-check {
+  width: 11px;
+  height: 11px;
+}
+
 .container__button {
   cursor: pointer;
   padding: 5px 0;
@@ -126,4 +141,29 @@ button {
 
 .items__items {
   display: flex;
+}
+
+.container__button__completed {
+  display: flex;
+  width: 100%;
+  height: 20px;
+}
+
+.button__completed {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgb(228, 226, 226);
+  }
+}
+
+.button__ {
+  cursor: pointer;
 }

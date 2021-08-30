@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,18 +8,28 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
-  response: any;
-  responseById: any = [];
-  responsegetDataById: string | any;
-  responseNumOrdine: string | any;
-  responseEmail: string | any;
+
   responseOggetti: any = [];
   responseData: any = [];
   totaleCrediti: any;
   showObject: any;
   showInfoOrdine: Boolean = false;
+  showCheck: Boolean = false;
+  responseValues: any;
+  showButton: Boolean = false;
+  response: any;
+  responseById: any = [];
+  responsegetDataById: any;
+  responseNumOrdine: any;
+  responseEmail: any;
 
-  constructor(public authService: AuthService) { }
+
+
+
+
+
+
+  constructor(public authService: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getOrdini();
@@ -52,4 +63,23 @@ export class OrdersComponent implements OnInit {
     this.showObject = true;
   }
 
+  idCheck: any = [];
+  dataPath = 'ordini/';
+  showPopupSicuro: Boolean = false;
+
+  onClickCircle(id) {
+    console.log(id);
+    this.showCheck = !this.showCheck;
+  }
+
+  checkValue(e: any, id: any) {
+    this.idCheck.push(id);
+    this.showButton = true;
+  }
+
+  onClickButtonCompleted() {
+    this.showPopupSicuro = true;
+    this.authService.deleteDocument(this.dataPath, `${this.idCheck}`);
+    this.getOrdini();
+  }
 }

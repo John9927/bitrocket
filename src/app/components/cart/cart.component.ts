@@ -92,7 +92,7 @@ export class CartComponent implements OnInit {
           var purchase_units = order.purchase_units;
           var status = order.status;
           var totaleCrediti = this.authService.all;
-          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'oggetti_ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value, 'totale_crediti': totaleCrediti});
+          this.authService.addData({'idPayPal': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'oggetti_ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value, 'totale_crediti': totaleCrediti});
           this.authService.indexBouncer = 0; //Reset index
           this.authService.allData = []; // Reset Data
           console.log("sono il datalist", this.authService.dataList)

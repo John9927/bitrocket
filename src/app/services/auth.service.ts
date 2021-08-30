@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { reduce } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,28 +16,30 @@ export class AuthService {
   showAddedCart: Boolean = false;
   showPopupCartMobile: Boolean = false;
   indexBouncer: any = 0;
-  totaleData: any= [];
+  totaleData: any = [];
   showPopupErrorTwoItems: Boolean = false;
   dataList: any = [];
+  dataCheckValue: any = [];
   all: any = [];
   nomeCurrent: string;
   paymentAccepted: Boolean = true;
   buttonClicked: Boolean = false;
   idPayment: any;
   paymentSuccessAcceptedGuard: Boolean = false;
+  url = 'ordini/';
 
-  constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore ) { }
+  constructor(public firebaseAuth: AngularFireAuth, public router: Router, private firestore: AngularFirestore) { }
 
   // Sign In
   async signin(email: string, password: string) {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
-    .then(credential => {
-      this.isLoggedIn = true;
-      setTimeout(() => {
-        this.router.navigateByUrl('orders');
-      }, 1000)
+      .then(credential => {
+        this.isLoggedIn = true;
+        setTimeout(() => {
+          this.router.navigateByUrl('orders');
+        }, 1000)
       }, error => {
-          alert(error.message);
+        alert(error.message);
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -59,14 +61,52 @@ export class AuthService {
   }
 
   addData(dato: any) {
-    return this.firestore.collection('ordini').add(dato).then(() => {});
+    return this.firestore.collection('ordini').add(dato).then(() => { });
   }
 
   getDataOrdini() {
     return this.firestore.collection('ordini', ref => ref.orderBy('time', 'desc')).get();
   }
 
-  getOrdiniById(id: any) {
-    return this.firestore.collection('ordini', ref => ref.where('id', '==', id)).valueChanges();
+  getOrdiniById(idPayPal: any) {
+    return this.firestore.collection('ordini', ref => ref.where('idPayPal', '==', idPayPal)).valueChanges();
+  }
+
+
+  deleteDocument(url: string, id: string):
+    Promise<any> {
+    return this.getDocumentRef(`${url}${id}`).delete()
+      .then(() => {
+        return null;
+      })
+      .catch((error) => {
+        return error;
+      });
+  }
+
+  getDocumentRef(path: string): AngularFirestoreDocument {
+    return this.firestore.doc(path);
+  }
+
+  getCollectionSnapshot(
+    path: string,
+    sortBy?: string
+  ): Observable<any[]> {
+    return this.getCollectionRef(path, sortBy).snapshotChanges();
+  }
+
+  getCollectionRef(path: string, sortBy?: string):
+    AngularFirestoreCollection {
+    if (sortBy === undefined) {
+      return this.firestore.collection(path);
+    } else {
+      return this.firestore.collection(path, ref => ref.orderBy(sortBy));
+    }
+  }
+
+  getDocumentSnapshot(
+    path: string,
+  ): Observable<any> {
+    return this.getDocumentRef(path).snapshotChanges();
   }
 }
