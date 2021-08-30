@@ -15,7 +15,6 @@ export class CartComponent implements OnInit {
   constructor(public authService: AuthService, private fb: FormBuilder, public router: Router) { }
 
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
-  all: any = [];
   data: any;
   index: Boolean = false;
   disabledPaypal: Boolean = false;
@@ -36,8 +35,8 @@ export class CartComponent implements OnInit {
 
     this.authService.dataList = this.authService.allData;
     this.data = this.authService.allData;
-    var datadata = this.data.map(res => this.all = res.euro)
-    this.all = this.sum(datadata);
+    var datadata = this.data.map(res => this.authService.all = res.euro)
+    this.authService.all = this.sum(datadata);
     if (this.authService.indexBouncer > 5 && window.innerWidth > 700) {
       this.index = true;
     } else {
@@ -63,7 +62,7 @@ export class CartComponent implements OnInit {
               {
                 description: this.authService.nomeCurrent,
                 amount: {
-                  value: this.all
+                  value: this.authService.all
                 }
               }
             ]
@@ -92,8 +91,11 @@ export class CartComponent implements OnInit {
           var surname = order.payer.name.surname;
           var purchase_units = order.purchase_units;
           var status = order.status;
-          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'Oggetti Ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value});
+          var totaleCrediti = this.authService.all;
+          this.authService.addData({'id': id, 'time': time, 'name': given_mame, 'surname': surname, 'email_paypal': email_address, 'purchase_units': purchase_units, 'status': status, 'oggetti_ordinati': this.authService.allData ,'idEpic': this.formEpicEmail.controls.epic.value, 'Email': this.formEpicEmail.controls.email.value, 'totale_crediti': totaleCrediti});
           this.authService.indexBouncer = 0; //Reset index
+          this.authService.allData = []; // Reset Data
+          console.log("sono il datalist", this.authService.dataList)
           this.authService.paymentSuccessAcceptedGuard = true;
           this.router.navigateByUrl('payment-accepted');
 
@@ -110,8 +112,8 @@ export class CartComponent implements OnInit {
     this.authService.dataList = this.authService.dataList.filter((item: any) => item.Id !== id);
     this.authService.allData = this.authService.dataList;
     this.data = this.authService.allData;
-    var datadata = this.data.map(res => this.all = res.euro)
-    this.all = this.sum(datadata);
+    var datadata = this.data.map(res => this.authService.all = res.euro)
+    this.authService.all = this.sum(datadata);
     this.authService.indexBouncer--;
 
     if(this.authService.indexBouncer == 0) {

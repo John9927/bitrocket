@@ -1,0 +1,128 @@
+.container__orders {
+  display: flex;
+  width: 100%;
+  height: 100vh; //Fix to Auto TODO
+}
+
+.orders {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  background: linear-gradient(
+    127.52deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  mix-blend-mode: normal;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+}
+
+.container__cards {
+  display: flex;
+  width: 90%;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+
+.completare,
+.info__ordine,
+.ricerca {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+}
+
+.title {
+  font-family: Electrolize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 43px;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.container__completare,
+.container__info__ordine {
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__items {
+  display: flex;
+  width: 90%;
+  margin: 10px auto;
+  justify-content: space-around;
+  height: 38px;
+  background: #dcdcdc;
+  border-radius: 10px;
+}
+
+.item {
+  font-family: Electrolize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.container__completare__response {
+  display: flex;
+  width: 97%;
+  margin: 5px auto;
+  border: 5px 0;
+}
+
+.circle {
+  cursor: pointer;
+}
+
+.container__button {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  &:hover {
+    background-color: #75b7e6d0;
+    border-radius: 5px;
+  }
+
+  &:focus, &:active {
+    background-color: #0095ff6e;
+    border-radius: 5px;
+  }
+}
+
+.items__ordine {
+  display: flex;
+  width: 90%;
+  margin: 40px auto;
+  flex-direction: column;
+  font-family: Electrolize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  color: #000000;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+.items__items {
+  display: flex;
+}

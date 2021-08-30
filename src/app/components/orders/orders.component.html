@@ -1,1 +1,117 @@
 <app-header></app-header>
+
+<div class="container__orders">
+  <div class="orders">
+    <div class="container__cards">
+
+      <div class="completare">
+        <div class="title">
+          <span>Da completare</span>
+        </div>
+        <div class="container__completare">
+          <div class="header__items">
+            <div class="item">
+              <span>
+                Epic ID
+              </span>
+            </div>
+            <div class="item">
+              <span>
+                N.Ordine
+              </span>
+            </div>
+            <div class="item">
+              <span>
+                Data
+              </span>
+            </div>
+          </div>
+
+          <div class="container__completare__response" *ngFor="let r of response" >
+            <div class="circle">
+              <i class="far fa-circle"></i>
+            </div>
+            <button class="container__button" (click)="onClickResponse(r.id)">
+              <div class="epic__id">
+                {{r.idEpic}}
+              </div>
+              <div class="num__ordine">
+                {{r.id}}
+              </div>
+              <div class="data">
+                {{r.time | date}}
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="info__ordine">
+        <div class="title">
+          <span>Info Ordine</span>
+        </div>
+        <div class="container__info__ordine">
+          <div class="items__ordine" *ngIf="showInfoOrdine">
+            <div class="items__items">
+              <span>
+                Epic ID: &nbsp;
+              </span>
+              {{responseById}}
+            </div>
+
+            <div class="items__items">
+              <span>
+                N. Ordine: &nbsp;
+              </span>
+              {{responseNumOrdine}}
+            </div>
+
+            <div class="items__items">
+              <span>
+                Email: &nbsp;
+              </span>
+              {{responseEmail}}
+            </div>
+
+            <div class="items__items">
+              <span>
+                Oggetti:
+              </span><br>
+              <div style="display: flex; width: 100%; flex-direction: column;" *ngIf="showObject">
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp; Nome: {{responseOggetti.Nome}}
+                </span>
+                <span>
+                  &nbsp;&nbsp;&nbsp;&nbsp; Crediti: {{responseOggetti.crediti}}
+                </span>
+              </div>
+            </div>
+
+            <div class="items__items">
+              <span>
+                Data: &nbsp;
+              </span>
+              {{responseData}}
+            </div>
+
+            <div class="items__items">
+              <span>
+                Totale: &nbsp;
+              </span>
+              {{totaleCrediti}}€
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="ricerca">
+        <div class="title">
+          <span>Ricerca</span>
+        </div>
+        <div class="container__ricerca">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

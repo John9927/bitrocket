@@ -93,7 +93,7 @@
       <div class="container__totale" [ngClass]="{'relative': index == true, 'absolute': index == false}">
         <div class="totale">
           <div class="label">Total</div>
-          <div class="total">{{all | number : '1.2-2'}}€</div>
+          <div class="total">{{authService.all | number : '1.2-2'}}€</div>
         </div>
       </div>
     </div>

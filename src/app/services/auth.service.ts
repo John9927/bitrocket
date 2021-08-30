@@ -19,6 +19,7 @@ export class AuthService {
   totaleData: any= [];
   showPopupErrorTwoItems: Boolean = false;
   dataList: any = [];
+  all: any = [];
   nomeCurrent: string;
   paymentAccepted: Boolean = true;
   buttonClicked: Boolean = false;
@@ -59,5 +60,13 @@ export class AuthService {
 
   addData(dato: any) {
     return this.firestore.collection('ordini').add(dato).then(() => {});
+  }
+
+  getDataOrdini() {
+    return this.firestore.collection('ordini', ref => ref.orderBy('time', 'desc')).get();
+  }
+
+  getOrdiniById(id: any) {
+    return this.firestore.collection('ordini', ref => ref.where('id', '==', id)).valueChanges();
   }
 }
