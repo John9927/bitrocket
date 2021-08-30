@@ -80,16 +80,17 @@
 .container__completare__response {
   display: flex;
   width: 97%;
-  margin: 5px auto;
-  border: 5px 0;
+  padding: 5px auto;
 }
 
 .circle {
   cursor: pointer;
+  padding: 5px 0px 5px 5px;
 }
 
 .container__button {
   cursor: pointer;
+  padding: 5px 0;
   display: flex;
   justify-content: space-around;
   width: 100%;

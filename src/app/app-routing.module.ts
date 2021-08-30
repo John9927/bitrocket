@@ -13,8 +13,7 @@ import { Guard2Guard } from './guard2.guard';
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'orders', component: OrdersComponent},
-  // , canActivate: [GuardGuard]
+  { path: 'orders', component: OrdersComponent, canActivate: [GuardGuard]},
   { path: 'cart', component: CartComponent, canActivate: [Guard2Guard]},
   { path: 'receive-item-faster', component: ReveiceItemFasterComponent},
   { path: 'payment-accepted', component: PaymentAcceptedComponent, canActivate: [GuardpaymentGuard]},
