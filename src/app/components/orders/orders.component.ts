@@ -76,10 +76,11 @@ export class OrdersComponent implements OnInit {
   }
 
   onClickSi() {
-    this.showPopupSicuro = false;
     this.authService.deleteDocument(this.dataPath, `${this.idCheck}`);
     this.getOrdini();
+    this.showPopupSicuro = false;
     this.showButton = false;
+    this.showInfoOrdine = false;
   }
 
   onClickNo() {
